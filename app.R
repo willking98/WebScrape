@@ -8,7 +8,7 @@ library(stringdist)
 options(warn = 0)
 
 ui <- fluidPage(
-    titlePanel('Download the British National Formulary'),
+    titlePanel('BNF Download'),
     sidebarLayout(
         sidebarPanel(
             selectInput("dataset", "Choose a dataset:", 
