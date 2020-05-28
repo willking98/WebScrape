@@ -32,24 +32,18 @@ server <- function(input, output) {
     drugs <- html_text(html_nodes(drugpage, 'span'))
     drugs <- drugs[3:length(drugs)]
     drugs <- tolower(drugs)
-    
-    
-    #setwd("/Users/Will/Desktop/Work from home/ALTAR/Trial")
-    #drugs <- read.csv("BNF Drugs.csv")
-    #drugs <- drugs$name
-    #drugs <- tolower(drugs)
     drugs <- str_replace_all(drugs, " ", "-")
     drugs <- str_replace_all(drugs, ",", "")
     drugs <- str_replace_all(drugs, "é", "e")
     drugs <- str_replace(drugs, "\\(", "")
     drugs <- str_replace(drugs, "\\)", "")
     drugs <- str_replace(drugs, "'", "")
-    
     drugs <- str_replace_all(drugs, "d-(rh0)-", "d-rh0-")
     drugs <- sub("noradrenaline/norepinephrine", "noradrenalinenorepinephrine", drugs)
     drugs <- str_replace(drugs, "enaline/epinephr", "enalineepinephr")
     drugs <- sub("-$", "", drugs)
     drugs <- drugs[-c(87, 134:137, 163, 216, 236, 1628, 1629)] 
+    
     url <- "https://bnf.nice.org.uk/medicinal-forms/anastrozole.html"
     webpage <- read_html(url)
     
@@ -101,7 +95,6 @@ server <- function(input, output) {
         }
     }
     
-    # Choosing the lowest price for every given active ingredient
     
     BNF <- as.data.frame(z)
     BNF <- BNF %>% 
@@ -117,7 +110,8 @@ server <- function(input, output) {
     BNF <- BNF %>% 
         add_column(Code = code, .before = "ActiveIngredients")
     
-    
+# Choosing the lowest price for every given active ingredient
+
     BNF_min <- BNF %>% 
         group_by(ActiveIngredients) %>% 
         slice(which.min(Price)) 
