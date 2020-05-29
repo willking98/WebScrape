@@ -51,7 +51,7 @@ progress <- 0
 for(i in drugs){
     progress <- progress+1
     print(paste(round(progress/length(drugs)*100, digits = 1), "%", sep = ""))
-    print("Once the program reaches 100%, the data will be ready to download!")
+    print("Once the program reaches 100% (eta 3mins), the data will be ready to download!")
     url <- paste("https://bnf.nice.org.uk/medicinal-forms/", i, ".html", sep = "")
     webpage <- read_html(url)
     
