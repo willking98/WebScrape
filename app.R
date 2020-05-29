@@ -102,7 +102,7 @@ BNF_min <- BNF %>%
 
 
 ui <- fluidPage(
-    titlePanel('Download the British National Formulary'),
+    titlePanel('BNF Download'),
     sidebarLayout(
         sidebarPanel(
             
