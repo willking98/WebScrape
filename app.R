@@ -106,16 +106,14 @@ ui <- fluidPage(
     titlePanel('BNF Download'),
     sidebarLayout(
         sidebarPanel(
-            
-        ),
-        mainPanel(
             selectInput("dataset", "Choose a dataset:", 
                         choices = c("BNF", "BNF minimum prices")),
             radioButtons("filetype", "File type:",
                          choices = c("csv")),
             downloadButton('downloadData', 'Download')
-            
-        )
+        ),
+        mainPanel(
+            tableOutput("table")
     )
 )
 
