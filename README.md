@@ -9,6 +9,4 @@ The aim of this program is to complement the BNF and allow researchers to extrac
 
 To run this program simply copy and paste the following code into your R console:
 
-`library(shiny)
-
-runGitHub("WebScrape", "willking98")`
+`library(shiny) runGitHub("WebScrape", "willking98")`
