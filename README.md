@@ -19,7 +19,7 @@ Once the program has finished extracting the BNF data, you will have the option 
 
 ```{r, eval=TRUE, include=FALSE}
 library(knitr)
-library(utils)
+library(readr)
 bnf <- read_csv("BNF_sample.csv")
 BNF_head <- head(BNF_sample)
 kable(BNF_head)
