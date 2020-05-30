@@ -93,7 +93,8 @@ code <- seq(1:length(BNF$ActiveIngredients))
 code <- paste("A", code, sep = "")
 BNF <- BNF %>%
     add_column(Code = code, .before = "ActiveIngredients") %>%
-    mutate(Dose = parse_number(ActiveIngredients))
+    mutate(Dose = parse_number(ActiveIngredients)) %>%
+
 
 
 BNF_min <- BNF %>%
@@ -113,7 +114,8 @@ ui <- fluidPage(
             downloadButton('downloadData', 'Download')
         ),
         mainPanel(
-            tableOutput("table")
+          img(src='NU_logo.png', align = "right"),
+          tableOutput("table")
     )
   )
 )
