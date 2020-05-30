@@ -119,8 +119,6 @@ ui <- fluidPage(
             downloadButton('downloadData', 'Download')
         ),
         mainPanel(
-          img(src='NU_logo.png', align = "right"),
-          tableOutput("table")
     )
   )
 )
