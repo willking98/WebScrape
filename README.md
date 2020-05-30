@@ -10,3 +10,8 @@ The aim of this program is to complement the BNF and allow researchers to extrac
 To run this program simply copy and paste the following code into your R console:
 
 `library(shiny) runGitHub("WebScrape", "willking98")`
+
+Once the program has finished extracting the BNF data, you will have the option to download various forms of the dataset.
+
+* BNF - complete dataset of every drug listed on the BNF
+* BNF minimum prices - dataset of each drug listed on the BNF but where two providers offer an identical product (same ingredients and dosage), only the provider offering the lowest price is kept.
