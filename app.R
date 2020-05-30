@@ -94,9 +94,9 @@ code <- paste("A", code, sep = "")
 BNF <- BNF %>%
     add_column(Code = code, .before = "ActiveIngredients") %>%
     mutate(Dose = parse_number(ActiveIngredients)) %>%
-    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "mg"), "mg", NA)) %>%
-    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "microgram"), "microgram", NA)) %>%
-    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, " gram"), "gram", NA)) %>%
+    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "mg"), 1, NA)) %>%
+    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "microgram"), 2, NA)) %>%
+    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, " gram"), 3, NA)) %>%
     mutate(Dose_Type = as.factor(Dose_Type))
 
 
@@ -105,11 +105,11 @@ BNF_min <- BNF %>%
     group_by(ActiveIngredients) %>%
     slice(which.min(Price)) %>%
     mutate(Dose = parse_number(ActiveIngredients)) %>%
-    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "mg"), "mg", NA)) %>%
-    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "microgram"), "microgram", NA)) %>%
-    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, " gram"), "gram", NA)) %>%
+    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "mg"), 1, NA)) %>%
+    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "microgram"), 2, NA)) %>%
+    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, " gram"), 3, NA)) %>%
     mutate(Dose_Type = as.factor(Dose_Type))
-
+head(BNF_min)
 
 ui <- fluidPage(
     titlePanel('BNF Download'),
