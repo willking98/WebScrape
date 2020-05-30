@@ -96,8 +96,7 @@ BNF <- BNF %>%
     mutate(Dose = parse_number(ActiveIngredients)) %>%
     mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "mg"), 1, NA)) %>%
     mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "microgram"), 2, NA)) %>%
-    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, " gram"), 3, NA)) %>%
-    mutate(Dose_Type = as.factor(Dose_Type))
+    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, " gram"), 3, NA))
 
 
 
@@ -107,8 +106,8 @@ BNF_min <- BNF %>%
     mutate(Dose = parse_number(ActiveIngredients)) %>%
     mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "mg"), 1, NA)) %>%
     mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, "microgram"), 2, NA)) %>%
-    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, " gram"), 3, NA)) %>%
-    mutate(Dose_Type = as.factor(Dose_Type))
+    mutate(Dose_Type = ifelse(str_detect(ActiveIngredients, " gram"), 3, NA))
+
 head(BNF_min)
 
 ui <- fluidPage(
