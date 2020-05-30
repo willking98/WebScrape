@@ -16,3 +16,9 @@ Once the program has finished extracting the BNF data, you will have the option 
 
 * BNF - complete dataset of every drug listed on the BNF
 * BNF minimum prices - dataset of each drug listed on the BNF but where two providers offer an identical product (same ingredients and dosage), only the provider offering the lowest price is kept.
+
+### Extentions:
+
+* BNF for children
+* Medical devices
+* Using correct spellings to clean concomitant medication data
