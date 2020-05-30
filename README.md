@@ -1,7 +1,5 @@
 # BNF WebScraping
 
-## How to:
-
 This program extracts information from the British National Formulary to aid cleaning and pricing medications reported in clinical trials.
 The BNF website allows the researcher to receive the most up to date pricing information on any given medication licensed in the UK. As medication prices change constantly, it is important to have this information online so that it can be readily updated.
 
