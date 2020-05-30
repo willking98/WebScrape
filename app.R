@@ -92,13 +92,14 @@ BNF <- BNF %>%
 code <- seq(1:length(BNF$ActiveIngredients))
 code <- paste("A", code, sep = "")  
 BNF <- BNF %>% 
-    add_column(Code = code, .before = "ActiveIngredients")
+    add_column(Code = code, .before = "ActiveIngredients") %>%
+    mutate(Dose = parse_number(ActiveIngredients))
 
 
 BNF_min <- BNF %>% 
     group_by(ActiveIngredients) %>% 
-    slice(which.min(Price)) 
-
+    slice(which.min(Price)) %>%
+    mutate(Dose = parse_number(ActiveIngredients))
 
 
 ui <- fluidPage(
