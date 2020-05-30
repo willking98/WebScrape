@@ -1,11 +1,3 @@
-# README file for WebScrape
----
-title: "README file for BNF WebScrape"
-author: "Will King"
-date: "`r Sys.Date()`"
-output: html_document
----
-
 # BNF WebScraping
 
 ## How to:
@@ -18,4 +10,5 @@ The aim of this program is to complement the BNF and allow researchers to extrac
 To run this program simply copy and paste the following code into your R console:
 
 `library(shiny)
+
 runGitHub("WebScrape", "willking98")`
