@@ -17,7 +17,7 @@ Once the program has finished extracting the BNF data, you will have the option 
 * BNF - complete dataset of every drug listed on the BNF
 * BNF minimum prices - dataset of each drug listed on the BNF but where two providers offer an identical product (same ingredients and dosage), only the provider offering the lowest price is kept.
 
-```{r, echo=FALSE}
+```{r, eval=TRUE, include=FALSE}
 library(knitr)
 bnf <- read_csv("BNF_sample.csv")
 BNF_head <- head(BNF_sample)
