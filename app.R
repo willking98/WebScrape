@@ -119,6 +119,7 @@ ui <- fluidPage(
             downloadButton('downloadData', 'Download')
         ),
         mainPanel(
+          tableOutput("table")
     )
   )
 )
@@ -140,8 +141,8 @@ server <- function(input, output) {
                "BNF minimum prices" = BNF_min)
     })
 
-    output$table <- renderTable({
-        datasetInput()
+    output$table <- renderDataTable({
+        head(datasetInput())
     })
 
     # downloadHandler() takes two arguments, both functions.
