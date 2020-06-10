@@ -16,6 +16,12 @@ for i in drugs:
     search.send_keys(Keys.ENTER)
     time.sleep(2)
 
+    for i in range(1,10):
+        xpath = '//*[@id="search-results"]/div[1]/div[2]/ul/li[' + str(i) + ']/div/h4/a'
+        print(xpath)
+    med = driver.find_element_by_xpath('//*[@id="search-results"]/div[1]/div[2]/ul/li[4]/div/h4/a')
+    med.click()
+
 driver.quit()
 
 
